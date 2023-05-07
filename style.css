@@ -18,6 +18,11 @@ body{
 
 }
 
+.sw{
+    background-color: #6dee0a;
+
+}
+
 .calculator{
     border: 1px solid #717377;
     padding: 20px;
@@ -51,7 +56,7 @@ input::placeholder{
 button{
     border: none;
     width: 60px;
-    height: 60px;
+    height: 50px;
     margin: 10px;
     border-radius: 50%;
     background: transparent;
