@@ -1,76 +1,85 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+let input = document.getElementById('inputBox');
+let buttons = document.querySelectorAll('button');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
-}
+let string = "";
+let arr = Array.from(buttons);
+arr.forEach(button => {
+    button.addEventListener('click', (e) =>{
+       if(e.target.innerHTML == 'sqt'){
+        string = Math.sqrt(string);
+        input.value = string;
+       }
 
-body{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(45deg,
-    #0a0a0a,#3a4452);
-
-}
-
-.sw{
-    background-color: #6dee0a;
-
-}
-
-.calculator{
-    border: 1px solid #717377;
-    padding: 20px;
-    border-radius: 16px;
-    background: transparent;
-    box-shadow: 0px 3px 15px rgba(113,115,
-    119,0.5);
+       else if(e.target.innerHTML == 'log'){
+        string = Math.log(string);
+        input.value = string;
+       }
 
 
-}
+       else if(e.target.innerHTML == 'pow'){
+        string = Math.pow(string,2);
+        input.value = string;
+       }
 
-input{
-    width: 100%;
-    border: none;
-    padding: 24px;
-    margin: 10px;
-    background: transparent;
-    box-shadow:0px 3px 15px rgbs(84, 84, 84, 0.1);
-    font-size: 40px;
-    text-align: right;
-    cursor: pointer;
-    color: #ffff;
+       else if(e.target.innerHTML == 'pi'){
+        string = 3.14159265359;
+        input.value = string;
+       }
 
-}
+       else if(e.target.innerHTML == 'e'){
+        string = 2.71828182846;
+        input.value = string;
+       }
 
-input::placeholder{
-    color: #ffff;
 
-}
+       
+        else if(e.target.innerHTML == 'tan'){
+        string = Math.tan(string);
+        input.value = string;
+       }
 
-button{
-    border: none;
-    width: 60px;
-    height: 50px;
-    margin: 10px;
-    border-radius: 50%;
-    background: transparent;
-    color: #ffff;
-    font-size: 20px;
-    box-shadow: -8px -8px 15px rgba(255,255,255,0.1);
-    cursor: pointer;
-}
+        else if(e.target.innerHTML == 'cos'){
+            string = Math.cos(string);
+            input.value = string;
+        }
+        
+ 
 
-.equalto{
-    background-color: #fb7c;
+        else if(e.target.innerHTML == 'sin'){
+           string = Math.sin(string);
+           input.value = string;
 
-}
+        
+        }
+        
+        
+        else if(e.target.innerHTML == '='){
+            string  = eval(string);
+            input.value = string;
+        }
 
-.addition{
-    color: #6dee0a;
-}
+        else if(e.target.innerHTML == 'AC'){
+            string = "";
+            input.value = string;
+
+        }
+        else if(e.target.innerHTML == 'DEL'){
+            string = string.substring(0,string.length-1);
+            input.value = string;
+        }
+        else{
+            string += e.target.innerHTML;
+        input.value = string;
+
+        }
+
+
+
+        
+
+    })
+
+
+
+
+})
